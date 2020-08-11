@@ -1,7 +1,7 @@
 // Focus first element
 document.getElementById('name').focus();
 
-// Insert 'other title' inputfield
+// Insert 'other title' inputfield // TODO Must be in HTML, so that it'll work without JS
 const inputOtherJob = document.createElement('input');
 inputOtherJob.setAttribute('id', 'other-title');
 inputOtherJob.setAttribute('placeholder', 'Your Job Role');
@@ -28,6 +28,7 @@ selectJobRole.addEventListener('change', (e) => {
 // T-Shirt style
 const sDesign = document.querySelector('#design');
 const divColour = document.querySelector('#colors-js-puns');
+divColour.style.display = 'none';
 const sColour = document.querySelector('#color');
 // Hide the color picker div when nothing is selected in Design
 sDesign.addEventListener('change', (e) => {
@@ -38,7 +39,8 @@ sDesign.addEventListener('change', (e) => {
         divColour.style.display = 'block';
     }
 })
-// Method for hiding options from colour select
+// Hide Options from colour select
+// TODO First selected Item should be fixed
 function hideOptions(string) {
     // hide all
     if (string === null || string === '' || string === 'Select Theme') {
@@ -46,7 +48,7 @@ function hideOptions(string) {
             sColour[i].style.display = 'none';
         }
     }
-    // only hide heart js
+    // hide heart js
     else if (string === 'js puns') {
         for (let i = 0; i < sColour.length; i++) {
             if (sColour[i].textContent.includes('JS Puns')) {
@@ -57,11 +59,11 @@ function hideOptions(string) {
             }
         }
     }
-    // only hide js puns
+    // hide js puns
     else if (string === 'heart js') {
         for (let i = 0; i < sColour.length; i++) {
-            if (sColour[i].textContent.includes('I &#9829; JS')) {
-                sColour[i].style.display = 'none';
+            if (sColour[i].textContent.includes('I ♥ JS')) {
+                sColour[i].style.display = 'block';
             }
             else {
                 sColour[i].style.display = 'none';
@@ -83,4 +85,23 @@ hideOptions(null);
 // Event listener for Design
 sDesign.addEventListener('change', (e) => {
     hideOptions(e.target.value);
+})
+
+// Activity selection
+const fieldsetActivities = document.querySelector('.activities');
+const dateList = [];
+fieldsetActivities.addEventListener('change', (e) => {
+
+    // Loop over fieldset and disable all competing dates
+    for(const element of fieldsetActivities.elements) {
+        console.log(element);
+    }
+
+    // if(!dateList.includes(e.target.dataset.dayAndTime)) {
+    //     console.log('yes');
+    //     dateList.push(e.target.dataset.dayAndTime);
+    // }
+    // else {
+    //     console.log('no');
+    // }
 })
