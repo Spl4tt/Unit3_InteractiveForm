@@ -1,6 +1,7 @@
 // Focus first element
 document.getElementById('name').focus();
 
+// ”Job Role”
 // Insert 'other title' inputfield // TODO Must be in HTML, so that it'll work without JS
 const inputOtherJob = document.createElement('input');
 inputOtherJob.setAttribute('id', 'other-title');
@@ -25,7 +26,7 @@ selectJobRole.addEventListener('change', (e) => {
     }
 })
 
-// T-Shirt style
+// ”T-Shirt Info”
 const sDesign = document.querySelector('#design');
 const divColour = document.querySelector('#colors-js-puns');
 divColour.style.display = 'none';
@@ -87,21 +88,37 @@ sDesign.addEventListener('change', (e) => {
     hideOptions(e.target.value);
 })
 
-// Activity selection
+// ”Register for Activities”
 const fieldsetActivities = document.querySelector('.activities');
-const dateList = [];
+const checkboxes = document.querySelectorAll('.activities input');
+const total = document.createElement('label');
+let intTotal = 0;
+total.textContent = 'Total: $' + intTotal;
+fieldsetActivities.parentNode.insertBefore(total, fieldsetActivities.nextSibling);
 fieldsetActivities.addEventListener('change', (e) => {
-
-    // Loop over fieldset and disable all competing dates
-    for(const element of fieldsetActivities.elements) {
-        console.log(element);
+    const clicked = e.target;
+    // Add to total cost
+    if(clicked.checked) {
+        // TODO There's surely a better way
+        intTotal += parseInt(clicked.dataset.cost);
+        total.textContent = 'Total: $' + intTotal;
+    }
+    else {
+        intTotal -= parseInt(clicked.dataset.cost);
+        total.textContent = 'Total: $' + intTotal;
     }
 
-    // if(!dateList.includes(e.target.dataset.dayAndTime)) {
-    //     console.log('yes');
-    //     dateList.push(e.target.dataset.dayAndTime);
-    // }
-    // else {
-    //     console.log('no');
-    // }
+    // Loop over fieldset and disable all competing dates
+    for(const checkbox of checkboxes) {
+        if(checkbox !== clicked && checkbox.dataset.dayAndTime === clicked.dataset.dayAndTime) {
+            if(clicked.checked) {
+                checkbox.disabled = true;
+            }
+            else {
+                checkbox.disabled = false;
+            }
+        }
+    }
 })
+
+// "Payment Info"
