@@ -122,3 +122,54 @@ fieldsetActivities.addEventListener('change', (e) => {
 })
 
 // "Payment Info"
+const sPaymentOption = document.querySelector('#payment');
+const divCredcard = document.querySelector('#credit-card');
+const divPaypal = document.querySelector('#paypal');
+const divBitcoin = document.querySelector('#bitcoin');
+divCredcard.style.display = 'none';
+divPaypal.style.display = 'none';
+divBitcoin.style.display = 'none';
+sPaymentOption.value = 'credit card';
+
+sPaymentOption.addEventListener('change', (e) => {
+    console.log(e.target.value);
+    if(e.target.value === 'credit card') {
+        divCredcard.style.display = 'block';
+        divPaypal.style.display = 'none';
+        divBitcoin.style.display = 'none';
+    }
+    else if (e.target.value === 'paypal') {
+        divCredcard.style.display = 'none';
+        divPaypal.style.display = 'block';
+        divBitcoin.style.display = 'none';
+    }
+    else if (e.target.value === 'bitcoin') {
+        divCredcard.style.display = 'none';
+        divPaypal.style.display = 'none';
+        divBitcoin.style.display = 'block';
+    }
+    else {
+        divCredcard.style.display = 'none';
+        divPaypal.style.display = 'none';
+        divBitcoin.style.display = 'none';
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
