@@ -30,7 +30,8 @@ selectJobRole.addEventListener('change', (e) => {
 const sDesign = document.querySelector('#design');
 const divColour = document.querySelector('#colors-js-puns');
 divColour.style.display = 'none';
-const sColour = document.querySelector('#color');
+// const sColour = document.querySelector('#color');
+const colorOptions = document.querySelectorAll('#color option');
 // Hide the color picker div when nothing is selected in Design
 sDesign.addEventListener('change', (e) => {
     if(e.target.value === 'Select Theme') {
@@ -40,36 +41,38 @@ sDesign.addEventListener('change', (e) => {
         divColour.style.display = 'block';
     }
 })
+
 // Hide Options from colour select
-// TODO First selected Item should be fixed
 function hideOptions(string) {
     // hide all
     if (string === null || string === '' || string === 'Select Theme') {
-        for (let i = 0; i < sColour.length; i++) {
-            sColour[i].style.display = 'none';
+        for (let i = 0; i < colorOptions.length; i++) {
+            colorOptions[i].hidden = true;
         }
     }
     // hide heart js
     else if (string === 'js puns') {
-        for (let i = 0; i < sColour.length; i++) {
-            if (sColour[i].textContent.includes('JS Puns')) {
-                sColour[i].style.display = 'block';
+        for (let i = 0; i < colorOptions.length; i++) {
+            if (colorOptions[i].textContent.includes('JS Puns')) {
+                colorOptions[i].hidden = false;
             }
             else {
-                sColour[i].style.display = 'none';
+                colorOptions[i].hidden = true;
             }
         }
+        colorOptions[0].selected = true;
     }
     // hide js puns
     else if (string === 'heart js') {
-        for (let i = 0; i < sColour.length; i++) {
-            if (sColour[i].textContent.includes('I ♥ JS')) {
-                sColour[i].style.display = 'block';
+        for (let i = 0; i < colorOptions.length; i++) {
+            if (colorOptions[i].textContent.includes('I ♥ JS')) {
+                colorOptions[i].hidden = false;
             }
             else {
-                sColour[i].style.display = 'none';
+                colorOptions[i].hidden = true;
             }
         }
+        colorOptions[3].selected = true;
     }
 }
 
@@ -123,16 +126,16 @@ fieldsetActivities.addEventListener('change', (e) => {
 
 // "Payment Info"
 const sPaymentOption = document.querySelector('#payment');
+document.querySelector('option[value="select method"]').hidden = true;
 const divCredcard = document.querySelector('#credit-card');
 const divPaypal = document.querySelector('#paypal');
 const divBitcoin = document.querySelector('#bitcoin');
-divCredcard.style.display = 'none';
+divCredcard.style.display = 'block';
 divPaypal.style.display = 'none';
 divBitcoin.style.display = 'none';
 sPaymentOption.value = 'credit card';
 
 sPaymentOption.addEventListener('change', (e) => {
-    console.log(e.target.value);
     if(e.target.value === 'credit card') {
         divCredcard.style.display = 'block';
         divPaypal.style.display = 'none';
@@ -155,6 +158,7 @@ sPaymentOption.addEventListener('change', (e) => {
     }
 })
 
+// "Form validation"
 
 
 

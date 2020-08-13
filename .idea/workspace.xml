@@ -39,7 +39,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -59,13 +59,30 @@
       <workItem from="1597074665260" duration="2140000" />
       <workItem from="1597096863136" duration="4998000" />
       <workItem from="1597155219599" duration="1213000" />
+      <workItem from="1597321669224" duration="6417000" />
     </task>
+    <task id="LOCAL-00001" summary="Started payment stuff">
+      <created>1597246361654</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597246361654</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started payment stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started payment stuff" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1597246361515">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597246361515" />
     <state x="771" y="453" width="377" height="207" key="Github.ShareDialog" timestamp="1596562354651">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -142,6 +159,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1597076575448" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1597246370859">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1597246370859" />
     <state x="624" y="252" key="run.anything.popup" timestamp="1596642310769">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
