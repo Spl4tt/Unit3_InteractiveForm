@@ -1,5 +1,9 @@
 // Focus first element
-document.getElementById('name').focus();
+const name = document.getElementById('name');
+name.focus();
+
+// declare mail for later
+const mail = document.getElementById('mail');
 
 // ”Job Role”
 // Insert 'other title' inputfield // TODO Must be in HTML, so that it'll work without JS
@@ -30,7 +34,6 @@ selectJobRole.addEventListener('change', (e) => {
 const sDesign = document.querySelector('#design');
 const divColour = document.querySelector('#colors-js-puns');
 divColour.style.display = 'none';
-// const sColour = document.querySelector('#color');
 const colorOptions = document.querySelectorAll('#color option');
 // Hide the color picker div when nothing is selected in Design
 sDesign.addEventListener('change', (e) => {
@@ -158,8 +161,66 @@ sPaymentOption.addEventListener('change', (e) => {
     }
 })
 
-// "Form validation"
+// "Form validation" As we learned from the warmup
+function nameValidation() {
+    if(name.value.length > 0) {
+        name.style.border = '1px solid white';
+         return true;
+    }
+    else {
+        name.style.border = '2px solid red';
+        return false;
+    }
+}
 
+function mailValidation() {
+    // Googled a good regex for email check (I mean, that's how you do it, right?)
+    const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(regexMail.test(mail.value)) {
+        mail.style.border = '1px solid white';
+        return true;
+    }
+    else {
+        mail.style.border = '2px solid red';
+        return false;
+    }
+}
+
+function activitiesValidation() {
+    // We could also just check the intTotal value, to see if the price is 0 == none is checked, but we'll do it right
+    for(const checkbox of checkboxes) {
+        if(checkbox.checked) {
+            fieldsetActivities.style.border = '1px solid white';
+            return true;
+        }
+    }
+    fieldsetActivities.style.border = '2px solid red';
+    return false;
+}
+
+function credcardValidation() {
+    if(sPaymentOption.value === 'credit card') {
+        const number = document.getElementById('cc-num');
+        const zip = document.getElementById('zip');
+        const cvv = document.getElementById('cvv');
+        // Went one step further and Googled regex for most used credcards
+        const regexVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+        const regexMastercard = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
+        const regexAmex = /^3[47][0-9]{13}$/;
+        const regexZipUS = /^\d{5}$/;
+        const regexCVV = /^\d{3}$/;
+
+        if ((regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value)) &&
+            regexZipUS.test(zip.value) &&
+            regexCVV.test(cvv.value)) {
+            divCredcard.style.border = '1px solid white';
+            return true;
+        } else {
+            divCredcard.style.border = '2px solid red';
+            return false;
+        }
+    }
+}
 
 
 

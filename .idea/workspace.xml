@@ -39,7 +39,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -60,6 +60,8 @@
       <workItem from="1597096863136" duration="4998000" />
       <workItem from="1597155219599" duration="1213000" />
       <workItem from="1597321669224" duration="6417000" />
+      <workItem from="1597781799160" duration="177000" />
+      <workItem from="1597866397249" duration="3216000" />
     </task>
     <task id="LOCAL-00001" summary="Started payment stuff">
       <created>1597246361654</created>
@@ -68,11 +70,18 @@
       <option name="project" value="LOCAL" />
       <updated>1597246361654</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="finished activities">
+      <created>1597185457788</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597185457788</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started payment stuff" />
@@ -163,6 +172,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1597246370859" />
+    <state x="1811" y="868" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597781820658">
+      <screen x="1080" y="400" width="1920" height="1080" />
+    </state>
+    <state x="1811" y="868" width="448" height="170" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1080.400.1920.1080/0.427.1080.1493@1080.400.1920.1080" timestamp="1597781820658" />
     <state x="624" y="252" key="run.anything.popup" timestamp="1596642310769">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
