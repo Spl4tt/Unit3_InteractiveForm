@@ -163,7 +163,9 @@ sPaymentOption.addEventListener('change', (e) => {
 
 // "Form validation" As we learned from the warmup
 function nameValidation() {
+    // If length of name value is 0, field is empty and we return false and paint the border red
     if(name.value.length > 0) {
+        // return true if field is filled out and paint the border white
         name.style.border = '1px solid white';
          return true;
     }
@@ -176,6 +178,7 @@ function nameValidation() {
 function mailValidation() {
     // Googled a good regex for email check (I mean, that's how you do it, right?)
     const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    // Check the regex, return true and paint border white if correct, else return false and paint border red
     if(regexMail.test(mail.value)) {
         mail.style.border = '1px solid white';
         return true;
@@ -188,6 +191,7 @@ function mailValidation() {
 
 function activitiesValidation() {
     // We could also just check the intTotal value, to see if the price is 0 == none is checked, but we'll do it right
+    // Loop over all checkboxes, return true and paint border white if anyone was checked, else return false and paint border red
     for(const checkbox of checkboxes) {
         if(checkbox.checked) {
             fieldsetActivities.style.border = '1px solid white';
@@ -199,7 +203,9 @@ function activitiesValidation() {
 }
 
 function credcardValidation() {
+    // Only validate if credcard option is chosen
     if(sPaymentOption.value === 'credit card') {
+        // Get values
         const number = document.getElementById('cc-num');
         const zip = document.getElementById('zip');
         const cvv = document.getElementById('cvv');
@@ -210,6 +216,7 @@ function credcardValidation() {
         const regexZipUS = /^\d{5}$/;
         const regexCVV = /^\d{3}$/;
 
+        // Test values. Return true and paint border white if all good, else return false and paint border red.
         if ((regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value)) &&
             regexZipUS.test(zip.value) &&
             regexCVV.test(cvv.value)) {
@@ -222,7 +229,23 @@ function credcardValidation() {
     }
 }
 
+const form = document.querySelector('form');
 
+form.addEventListener('submit', (e) => {
+    // Check all validators and prevent submission if something is incorrect
+    if(!nameValidation()) {
+        e.preventDefault();
+    }
+    if(!mailValidation()) {
+        e.preventDefault();
+    }
+    if(!activitiesValidation()) {
+        e.preventDefault();
+    }
+    if(!credcardValidation()) {
+        e.preventDefault();
+    }
+})
 
 
 
