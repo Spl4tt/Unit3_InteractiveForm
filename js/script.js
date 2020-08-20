@@ -6,18 +6,10 @@ name.focus();
 const mail = document.getElementById('mail');
 
 // ”Job Role”
-// Insert 'other title' inputfield // TODO Must be in HTML, so that it'll work without JS
-const inputOtherJob = document.createElement('input');
-inputOtherJob.setAttribute('id', 'other-title');
-inputOtherJob.setAttribute('placeholder', 'Your Job Role');
-inputOtherJob.type = 'text';
-inputOtherJob.value = '';
-// Insert 'inputOtherJob': Get parentnode for 'inputOtherJob' and insert it
-const parentNodeInputOtherJob = document.querySelector('#title');
-parentNodeInputOtherJob.parentNode.insertBefore(inputOtherJob, parentNodeInputOtherJob.nextSibling);
-// Event listener for T-Shirt Design
-// Hide the 'inputOtherJob' (Only show when needed defined later)
+// Hide the 'inputOtherJob'
+const inputOtherJob = document.getElementById('other-title');
 inputOtherJob.style.display = 'none';
+
 // Select "Job Role" select, and add listener to show 'inputOtherJob' input
 const selectJobRole = document.querySelector('#title');
 selectJobRole.addEventListener('change', (e) => {
@@ -165,8 +157,8 @@ sPaymentOption.addEventListener('change', (e) => {
 function nameValidation() {
     // If length of name value is 0, field is empty and we return false and paint the border red
     if(name.value.length > 0) {
-        // return true if field is filled out and paint the border white
-        name.style.border = '1px solid white';
+        // return true if field is filled out and show no border
+        name.style.border = 'none';
          return true;
     }
     else {
@@ -178,9 +170,9 @@ function nameValidation() {
 function mailValidation() {
     // Googled a good regex for email check (I mean, that's how you do it, right?)
     const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    // Check the regex, return true and paint border white if correct, else return false and paint border red
+    // Check the regex, return true and show no border if correct, else return false and paint border red
     if(regexMail.test(mail.value)) {
-        mail.style.border = '1px solid white';
+        mail.style.border = 'none';
         return true;
     }
     else {
@@ -191,10 +183,10 @@ function mailValidation() {
 
 function activitiesValidation() {
     // We could also just check the intTotal value, to see if the price is 0 == none is checked, but we'll do it right
-    // Loop over all checkboxes, return true and paint border white if anyone was checked, else return false and paint border red
+    // Loop over all checkboxes, return true and show no border if anyone was checked, else return false and paint border red
     for(const checkbox of checkboxes) {
         if(checkbox.checked) {
-            fieldsetActivities.style.border = '1px solid white';
+            fieldsetActivities.style.border = 'none';
             return true;
         }
     }
@@ -210,17 +202,20 @@ function credcardValidation() {
         const zip = document.getElementById('zip');
         const cvv = document.getElementById('cvv');
         // Went one step further and Googled regex for most used credcards
+        // Test Visa: 4111111111111111
         const regexVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+        // Test Mastercard: 5500000000000004
         const regexMastercard = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
+        // Test Amex: 340000000000009
         const regexAmex = /^3[47][0-9]{13}$/;
         const regexZipUS = /^\d{5}$/;
         const regexCVV = /^\d{3}$/;
 
-        // Test values. Return true and paint border white if all good, else return false and paint border red.
+        // Test values. Return true and show no border if all good, else return false and paint border red.
         if ((regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value)) &&
             regexZipUS.test(zip.value) &&
             regexCVV.test(cvv.value)) {
-            divCredcard.style.border = '1px solid white';
+            divCredcard.style.border = 'none';
             return true;
         } else {
             divCredcard.style.border = '2px solid red';

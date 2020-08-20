@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc632284-cf67-4b8c-affb-b4a8c501f360" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +63,7 @@
       <workItem from="1597321669224" duration="6417000" />
       <workItem from="1597781799160" duration="177000" />
       <workItem from="1597866397249" duration="3216000" />
-      <workItem from="1597941702831" duration="386000" />
+      <workItem from="1597941702831" duration="2396000" />
     </task>
     <task id="LOCAL-00001" summary="Started payment stuff">
       <created>1597246361654</created>
@@ -78,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597185457788</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="validation finished">
+      <created>1597942118734</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597942118734</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,13 +94,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started payment stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started payment stuff" />
+    <MESSAGE value="validation finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation finished" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1597246361515">
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1597942118540">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597246361515" />
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597942118540" />
     <state x="771" y="453" width="377" height="207" key="Github.ShareDialog" timestamp="1596562354651">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -165,10 +174,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1897" height="340" key="GridCell.Tab.3.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596820808552" />
-    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1597076575448">
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1597945785187">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1597076575448" />
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1597945785187" />
     <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1597246370859">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
