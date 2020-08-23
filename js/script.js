@@ -154,6 +154,24 @@ sPaymentOption.addEventListener('change', (e) => {
 })
 
 // "Form validation" As we learned from the warmup
+
+/**
+ * Function to set a message if soemthing is wrong with the credcard infos
+ * @param message Message to add
+ */
+// function addMessage(message) {
+//     let divMessageField = document.getElementById('message-field');
+//     // Check if div exists
+//     const message = document.createElement('p');
+//     if(!divMessageField) {
+//         divMessageField = document.createElement('div');
+//         divCredcard.insertBefore(divMessageField);
+//
+//     }
+//     // If there are messages inside, show
+//     // Else, hide
+// }
+
 function nameValidation() {
     // If length of name value is 0, field is empty and we return false and paint the border red
     if(name.value.length > 0) {

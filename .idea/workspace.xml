@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc632284-cf67-4b8c-affb-b4a8c501f360" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,8 @@
       <workItem from="1597321669224" duration="6417000" />
       <workItem from="1597781799160" duration="177000" />
       <workItem from="1597866397249" duration="3216000" />
-      <workItem from="1597941702831" duration="2396000" />
+      <workItem from="1597941702831" duration="3090000" />
+      <workItem from="1598188282818" duration="7471000" />
     </task>
     <task id="LOCAL-00001" summary="Started payment stuff">
       <created>1597246361654</created>
@@ -86,22 +86,40 @@
       <option name="project" value="LOCAL" />
       <updated>1597942118734</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mostly finished the project (Finally)">
+      <created>1597946151861</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597946151861</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started payment stuff" />
     <MESSAGE value="validation finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation finished" />
+    <MESSAGE value="Mostly finished the project (Finally)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mostly finished the project (Finally)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1597942118540">
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1597946151744">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597942118540" />
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597946151744" />
     <state x="771" y="453" width="377" height="207" key="Github.ShareDialog" timestamp="1596562354651">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -178,10 +196,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1597945785187" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1597246370859">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1597946618917">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1597246370859" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1597946618917" />
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597941814728">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
