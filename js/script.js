@@ -102,7 +102,6 @@ fieldsetActivities.addEventListener('change', (e) => {
     const clicked = e.target;
     // Add to total cost
     if(clicked.checked) {
-        // TODO There's surely a better way
         intTotal += parseInt(clicked.dataset.cost);
         total.textContent = 'Total: $' + intTotal;
     }
@@ -114,12 +113,7 @@ fieldsetActivities.addEventListener('change', (e) => {
     // Loop over fieldset and disable all competing dates
     for(const checkbox of checkboxes) {
         if(checkbox !== clicked && checkbox.dataset.dayAndTime === clicked.dataset.dayAndTime) {
-            if(clicked.checked) {
-                checkbox.disabled = true;
-            }
-            else {
-                checkbox.disabled = false;
-            }
+            checkbox.disabled = clicked.checked;
         }
     }
 })
@@ -158,12 +152,10 @@ sPaymentOption.addEventListener('change', (e) => {
     }
 })
 
-// "Form validation" As we learned from the warmup
-
+// "Form validation" As we learned from the warm up lessons
 function nameValidation() {
     // If length of name value is 0, field is empty and we return false and paint the border red
     if(name.value.length > 0) {
-        // return true if field is filled out and show no border
         name.style.border = 'none';
          return true;
     }
@@ -176,12 +168,38 @@ function nameValidation() {
 function mailValidation() {
     // Googled a good regex for email check (I mean, that's how you do it, right?)
     const regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    function addMailMessage(messageString) {
+        let divMailMessageField = document.getElementById('mail-message-field');
+        if (!divMailMessageField) {
+            divMailMessageField = document.createElement('div');
+            divMailMessageField.setAttribute('id', 'mail-message-field');
+            // divMailMessageField.style.border = '2px solid red';
+            mail.parentNode.insertBefore(divMailMessageField, mail);
+            divMailMessageField.innerHTML += `<p style="color:red">${messageString}</p>`;
+        }
+    }
+
+    function removeMailMessage() {
+        const divMessageField = document.getElementById('mail-message-field');
+        if(divMessageField) {
+            divMessageField.remove();
+        }
+    }
+
     // Check the regex, return true and show no border if correct, else return false and paint border red
+    removeMailMessage();
     if(regexMail.test(mail.value)) {
         mail.style.border = 'none';
         return true;
     }
     else {
+        if(mail.value.length > 0) {
+            addMailMessage('Need correct E-Mail format: example@mail.com');
+        }
+        else {
+            addMailMessage('E-Mail needed.');
+        }
         mail.style.border = '2px solid red';
         return false;
     }
@@ -206,17 +224,16 @@ function credcardValidation() {
      * Function to set a message if soemthing is wrong with the credcard infos
      * @param messageString Message to add
      */
-    function addAndShowMessage(messageString) {
+    function addCredcardMessage(messageString) {
         let divMessageField = document.getElementById('message-field');
         // Check if div exists
-        // const message = document.createElement('p');
         if(!divMessageField) {
             divMessageField = document.createElement('div');
             divMessageField.setAttribute('id', 'message-field');
-            divMessageField.style.border = '2px solid red';
+            // divMessageField.style.border = '2px solid red';
             divCredcard.parentNode.insertBefore(divMessageField, divCredcard);
         }
-        divMessageField.innerHTML += `<p>${messageString}</p>`;
+        divMessageField.innerHTML += `<p style="color:red">${messageString}</p>`;
     }
 
     function removeMessage() {
@@ -243,28 +260,28 @@ function credcardValidation() {
         let result = true;
         if (!(regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value))) {
             if(number.value.length === 0) {
-                addAndShowMessage('Please enter a creditcard number');
+                addCredcardMessage('Please enter a creditcard number');
             }
             else {
-                addAndShowMessage('Card Number wrong. Please enter a Valid Vise/Mastercard/Amex Number.');
+                addCredcardMessage('Card Number wrong. Please enter a Valid Vise/Mastercard/Amex Number.');
             }
             result = false;
         }
         if (!regexZipUS.test(zip.value)) {
             if(zip.value.length === 0) {
-                addAndShowMessage('Please enter a ZIP code');
+                addCredcardMessage('Please enter a ZIP code');
             }
             else {
-                addAndShowMessage('ZIP wrong');
+                addCredcardMessage('ZIP format wrong: Must be five digits');
             }
             result = false;
         }
         if (!regexCVV.test(cvv.value)) {
             if(cvv.value.length === 0) {
-                addAndShowMessage('Please enter a CVV');
+                addCredcardMessage('Please enter a CVV');
             }
             else {
-                addAndShowMessage('CVV wrong');
+                addCredcardMessage('CVV format wrong: Must be three digits');
             }
             result = false;
         }
