@@ -130,6 +130,7 @@ divBitcoin.style.display = 'none';
 sPaymentOption.value = 'credit card';
 
 sPaymentOption.addEventListener('change', (e) => {
+    removeMessage();
     if(e.target.value === 'credit card') {
         divCredcard.style.display = 'block';
         divPaypal.style.display = 'none';
@@ -218,6 +219,13 @@ function activitiesValidation() {
     return false;
 }
 
+function removeMessage() {
+    const divMessageField = document.getElementById('message-field');
+    if(divMessageField) {
+        divMessageField.remove();
+    }
+}
+
 function credcardValidation() {
 
     /**
@@ -234,13 +242,6 @@ function credcardValidation() {
             divCredcard.parentNode.insertBefore(divMessageField, divCredcard);
         }
         divMessageField.innerHTML += `<p style="color:red">${messageString}</p>`;
-    }
-
-    function removeMessage() {
-        const divMessageField = document.getElementById('message-field');
-        if(divMessageField) {
-            divMessageField.remove();
-        }
     }
 
     function checkCredcardStuff() {
