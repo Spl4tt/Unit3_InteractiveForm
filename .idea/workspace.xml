@@ -25,9 +25,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Unit3_InteractiveForm/index.html" useBuiltInWebServerPort="true">
@@ -63,7 +63,11 @@
       <workItem from="1597781799160" duration="177000" />
       <workItem from="1597866397249" duration="3216000" />
       <workItem from="1597941702831" duration="3090000" />
-      <workItem from="1598188282818" duration="7471000" />
+      <workItem from="1598188282818" duration="7485000" />
+      <workItem from="1598209658889" duration="671000" />
+      <workItem from="1598372370714" duration="6040000" />
+      <workItem from="1598378781684" duration="320000" />
+      <workItem from="1598462899860" duration="2651000" />
     </task>
     <task id="LOCAL-00001" summary="Started payment stuff">
       <created>1597246361654</created>
@@ -93,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597946151861</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="stuff">
+      <created>1598203559556</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598203559556</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,13 +124,14 @@
     <MESSAGE value="Started payment stuff" />
     <MESSAGE value="validation finished" />
     <MESSAGE value="Mostly finished the project (Finally)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mostly finished the project (Finally)" />
+    <MESSAGE value="stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1597946151744">
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1598203559207">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1597946151744" />
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598203559207" />
     <state x="771" y="453" width="377" height="207" key="Github.ShareDialog" timestamp="1596562354651">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -212,9 +224,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="624" y="252" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1596642310769" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1596806772151">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1598376789782">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1596806772151" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1598376789782" />
   </component>
 </project>

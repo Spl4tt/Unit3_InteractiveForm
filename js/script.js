@@ -5,6 +5,11 @@ name.focus();
 // declare mail for later
 const mail = document.getElementById('mail');
 
+// Add real-time validation for mail field
+mail.addEventListener('input', (e) => {
+    mailValidation();
+});
+
 // ”Job Role”
 // Hide the 'inputOtherJob'
 const inputOtherJob = document.getElementById('other-title');
@@ -155,23 +160,6 @@ sPaymentOption.addEventListener('change', (e) => {
 
 // "Form validation" As we learned from the warmup
 
-/**
- * Function to set a message if soemthing is wrong with the credcard infos
- * @param message Message to add
- */
-// function addMessage(message) {
-//     let divMessageField = document.getElementById('message-field');
-//     // Check if div exists
-//     const message = document.createElement('p');
-//     if(!divMessageField) {
-//         divMessageField = document.createElement('div');
-//         divCredcard.insertBefore(divMessageField);
-//
-//     }
-//     // If there are messages inside, show
-//     // Else, hide
-// }
-
 function nameValidation() {
     // If length of name value is 0, field is empty and we return false and paint the border red
     if(name.value.length > 0) {
@@ -213,8 +201,32 @@ function activitiesValidation() {
 }
 
 function credcardValidation() {
-    // Only validate if credcard option is chosen
-    if(sPaymentOption.value === 'credit card') {
+
+    /**
+     * Function to set a message if soemthing is wrong with the credcard infos
+     * @param messageString Message to add
+     */
+    function addAndShowMessage(messageString) {
+        let divMessageField = document.getElementById('message-field');
+        // Check if div exists
+        // const message = document.createElement('p');
+        if(!divMessageField) {
+            divMessageField = document.createElement('div');
+            divMessageField.setAttribute('id', 'message-field');
+            divMessageField.style.border = '2px solid red';
+            divCredcard.parentNode.insertBefore(divMessageField, divCredcard);
+        }
+        divMessageField.innerHTML += `<p>${messageString}</p>`;
+    }
+
+    function removeMessage() {
+        const divMessageField = document.getElementById('message-field');
+        if(divMessageField) {
+            divMessageField.remove();
+        }
+    }
+
+    function checkCredcardStuff() {
         // Get values
         const number = document.getElementById('cc-num');
         const zip = document.getElementById('zip');
@@ -228,15 +240,47 @@ function credcardValidation() {
         const regexAmex = /^3[47][0-9]{13}$/;
         const regexZipUS = /^\d{5}$/;
         const regexCVV = /^\d{3}$/;
+        let result = true;
+        if (!(regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value))) {
+            if(number.value.length === 0) {
+                addAndShowMessage('Please enter a creditcard number');
+            }
+            else {
+                addAndShowMessage('Card Number wrong. Please enter a Valid Vise/Mastercard/Amex Number.');
+            }
+            result = false;
+        }
+        if (!regexZipUS.test(zip.value)) {
+            if(zip.value.length === 0) {
+                addAndShowMessage('Please enter a ZIP code');
+            }
+            else {
+                addAndShowMessage('ZIP wrong');
+            }
+            result = false;
+        }
+        if (!regexCVV.test(cvv.value)) {
+            if(cvv.value.length === 0) {
+                addAndShowMessage('Please enter a CVV');
+            }
+            else {
+                addAndShowMessage('CVV wrong');
+            }
+            result = false;
+        }
+        return result;
+    }
 
+    // Only validate if credcard option is chosen
+    if(sPaymentOption.value === 'credit card') {
+        // Remove Previous messages
+        removeMessage();
         // Test values. Return true and show no border if all good, else return false and paint border red.
-        if ((regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value)) &&
-            regexZipUS.test(zip.value) &&
-            regexCVV.test(cvv.value)) {
+        if(checkCredcardStuff()) {
             divCredcard.style.border = 'none';
             return true;
-        } else {
-            divCredcard.style.border = '2px solid red';
+        }
+        else {
             return false;
         }
     }
