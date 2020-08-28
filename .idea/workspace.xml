@@ -26,7 +26,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -67,7 +67,13 @@
       <workItem from="1598209658889" duration="671000" />
       <workItem from="1598372370714" duration="6040000" />
       <workItem from="1598378781684" duration="320000" />
-      <workItem from="1598462899860" duration="2651000" />
+      <workItem from="1598462899860" duration="2782000" />
+      <workItem from="1598529321826" duration="53000" />
+      <workItem from="1598531411780" duration="100000" />
+      <workItem from="1598538198167" duration="22000" />
+      <workItem from="1598538376327" duration="259000" />
+      <workItem from="1598538654989" duration="3000" />
+      <workItem from="1598656582454" duration="1773000" />
     </task>
     <task id="LOCAL-00001" summary="Started payment stuff">
       <created>1597246361654</created>
@@ -104,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598203559556</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Completed?">
+      <created>1598465874158</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598465874158</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,13 +138,14 @@
     <MESSAGE value="validation finished" />
     <MESSAGE value="Mostly finished the project (Finally)" />
     <MESSAGE value="stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="stuff" />
+    <MESSAGE value="Completed?" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed?" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1598203559207">
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2" timestamp="1598465873867">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598203559207" />
+    <state x="499" y="99" width="912" height="916" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1598465873867" />
     <state x="771" y="453" width="377" height="207" key="Github.ShareDialog" timestamp="1596562354651">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -204,14 +218,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1897" height="340" key="GridCell.Tab.3.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596820808552" />
-    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1597945785187">
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1598531493333">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1597945785187" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1597946618917">
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1598531493333" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1598465884298">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1597946618917" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053@0.27.1920.1053" timestamp="1598465884298" />
     <state x="100" y="127" width="1720" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1597941814728">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

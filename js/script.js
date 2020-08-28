@@ -202,77 +202,125 @@ function activitiesValidation() {
 
 function credcardValidation() {
 
-    /**
-     * Function to set a message if soemthing is wrong with the credcard infos
-     * @param messageString Message to add
-     */
-    function addAndShowMessage(messageString) {
-        let divMessageField = document.getElementById('message-field');
-        // Check if div exists
-        // const message = document.createElement('p');
-        if(!divMessageField) {
-            divMessageField = document.createElement('div');
-            divMessageField.setAttribute('id', 'message-field');
-            divMessageField.style.border = '2px solid red';
-            divCredcard.parentNode.insertBefore(divMessageField, divCredcard);
-        }
-        divMessageField.innerHTML += `<p>${messageString}</p>`;
-    }
-
-    function removeMessage() {
-        const divMessageField = document.getElementById('message-field');
-        if(divMessageField) {
-            divMessageField.remove();
-        }
-    }
-
-    function checkCredcardStuff() {
-        // Get values
-        const number = document.getElementById('cc-num');
-        const zip = document.getElementById('zip');
-        const cvv = document.getElementById('cvv');
-        // Went one step further and Googled regex for most used credcards
-        // Test Visa: 4111111111111111
-        const regexVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
-        // Test Mastercard: 5500000000000004
-        const regexMastercard = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
-        // Test Amex: 340000000000009
-        const regexAmex = /^3[47][0-9]{13}$/;
-        const regexZipUS = /^\d{5}$/;
-        const regexCVV = /^\d{3}$/;
-        let result = true;
-        if (!(regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value))) {
-            if(number.value.length === 0) {
-                addAndShowMessage('Please enter a creditcard number');
-            }
-            else {
-                addAndShowMessage('Card Number wrong. Please enter a Valid Vise/Mastercard/Amex Number.');
-            }
-            result = false;
-        }
-        if (!regexZipUS.test(zip.value)) {
-            if(zip.value.length === 0) {
-                addAndShowMessage('Please enter a ZIP code');
-            }
-            else {
-                addAndShowMessage('ZIP wrong');
-            }
-            result = false;
-        }
-        if (!regexCVV.test(cvv.value)) {
-            if(cvv.value.length === 0) {
-                addAndShowMessage('Please enter a CVV');
-            }
-            else {
-                addAndShowMessage('CVV wrong');
-            }
-            result = false;
-        }
-        return result;
-    }
-
     // Only validate if credcard option is chosen
     if(sPaymentOption.value === 'credit card') {
+        /**
+         * Function to set a message if soemthing is wrong with the credcard infos
+         * @param messageString Message to add
+         */
+        function addAndShowMessage(messageString) {
+            let divMessageField = document.getElementById('message-field');
+            // Check if div exists
+            // const message = document.createElement('p');
+            if(!divMessageField) {
+                divMessageField = document.createElement('div');
+                divMessageField.setAttribute('id', 'message-field');
+                divMessageField.style.border = '2px solid red';
+                divCredcard.parentNode.insertBefore(divMessageField, divCredcard);
+            }
+            divMessageField.innerHTML += `<p>${messageString}</p>`;
+        }
+
+        function removeMessage() {
+            const divMessageField = document.getElementById('message-field');
+            if(divMessageField) {
+                divMessageField.remove();
+            }
+        }
+
+        // function checkCredcardStuff() {
+        //     // Get values
+        //     const number = document.getElementById('cc-num');
+        //     const zip = document.getElementById('zip');
+        //     const cvv = document.getElementById('cvv');
+        //     // Went one step further and Googled regex for most used credcards
+        //     // Test Visa: 4111111111111111
+        //     const regexVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+        //     // Test Mastercard: 5500000000000004
+        //     const regexMastercard = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
+        //     // Test Amex: 340000000000009
+        //     const regexAmex = /^3[47][0-9]{13}$/;
+        //     const regexZipUS = /^\d{5}$/;
+        //     const regexCVV = /^\d{3}$/;
+        //     let result = true;
+        //     if (!(regexVisa.test(number.value) || regexMastercard.test(number.value) || regexAmex.test(number.value))) {
+        //         if(number.value.length === 0) {
+        //             addAndShowMessage('Please enter a creditcard number');
+        //         }
+        //         else {
+        //             addAndShowMessage('Card Number wrong. Please enter a Valid Vise/Mastercard/Amex Number.');
+        //         }
+        //         result = false;
+        //     }
+        //     if (!regexZipUS.test(zip.value)) {
+        //         if(zip.value.length === 0) {
+        //             addAndShowMessage('Please enter a ZIP code');
+        //         }
+        //         else {
+        //             addAndShowMessage('ZIP wrong');
+        //         }
+        //         result = false;
+        //     }
+        //     if (!regexCVV.test(cvv.value)) {
+        //         if(cvv.value.length === 0) {
+        //             addAndShowMessage('Please enter a CVV');
+        //         }
+        //         else {
+        //             addAndShowMessage('CVV wrong');
+        //         }
+        //         result = false;
+        //     }
+        //     return result;
+        // }
+
+        function checkCredcardStuff() {
+            // Get values
+            const number = document.getElementById('cc-num');
+            const zip = document.getElementById('zip');
+            const cvv = document.getElementById('cvv');
+            // // Went one step further and Googled regex for most used credcards
+            // // Test Visa: 4111111111111111
+            // const regexVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+            // // Test Mastercard: 5500000000000004
+            // const regexMastercard = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
+            // // Test Amex: 340000000000009
+            // const regexAmex = /^3[47][0-9]{13}$/;
+            // const regexZipUS = /^\d{5}$/;
+            // const regexCVV = /^\d{3}$/;
+            let result = true;
+            if(number.value.length === 0) {
+                addAndShowMessage('Please enter a creditcard number');
+                result = false;
+            }
+            if (number.value.length < 13) {
+                addAndShowMessage('Creditcard number too short');
+                result = false;
+            }
+            if(number.value.length > 16) {
+                addAndShowMessage('Creditcard number too long.');
+                result = false;
+            }
+
+            if (!zip.value.length !== 5) {
+                if (zip.value.length === 0) {
+                    addAndShowMessage('Please enter a ZIP code');
+                } else {
+                    addAndShowMessage('ZIP wrong - Must be five digits.');
+                }
+                result = false;
+            }
+            if (cvv.value.length !== 3) {
+                if(cvv.value.length === 0) {
+                    addAndShowMessage('Please enter a CVV');
+                }
+                else {
+                    addAndShowMessage('CVV wrong - Must be three digits');
+                }
+                result = false;
+            }
+            return result;
+        }
+
         // Remove Previous messages
         removeMessage();
         // Test values. Return true and show no border if all good, else return false and paint border red.
@@ -284,6 +332,7 @@ function credcardValidation() {
             return false;
         }
     }
+    return true;
 }
 
 const form = document.querySelector('form');
