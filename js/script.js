@@ -228,6 +228,8 @@ function credcardValidation() {
             }
         }
 
+        // Went a bit too far here, but not gonna fully delete it, usefull for future reference:
+
         // function checkCredcardStuff() {
         //     // Get values
         //     const number = document.getElementById('cc-num');
@@ -278,30 +280,25 @@ function credcardValidation() {
             const number = document.getElementById('cc-num');
             const zip = document.getElementById('zip');
             const cvv = document.getElementById('cvv');
-            // // Went one step further and Googled regex for most used credcards
-            // // Test Visa: 4111111111111111
-            // const regexVisa = /^4[0-9]{12}(?:[0-9]{3})?$/;
-            // // Test Mastercard: 5500000000000004
-            // const regexMastercard = /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/;
-            // // Test Amex: 340000000000009
-            // const regexAmex = /^3[47][0-9]{13}$/;
-            // const regexZipUS = /^\d{5}$/;
-            // const regexCVV = /^\d{3}$/;
+
+            // Check if creditcard number is not empty, and between 13-16 symbols
             let result = true;
             if(number.value.length === 0) {
                 addAndShowMessage('Please enter a creditcard number');
                 result = false;
             }
-            if (number.value.length < 13) {
-                addAndShowMessage('Creditcard number too short');
-                result = false;
-            }
-            if(number.value.length > 16) {
-                addAndShowMessage('Creditcard number too long.');
-                result = false;
+            else {
+                if (number.value.length < 13) {
+                    addAndShowMessage('Creditcard number too short');
+                    result = false;
+                }
+                if (number.value.length > 16) {
+                    addAndShowMessage('Creditcard number too long.');
+                    result = false;
+                }
             }
 
-            if (!zip.value.length !== 5) {
+            if (zip.value.length !== 5) {
                 if (zip.value.length === 0) {
                     addAndShowMessage('Please enter a ZIP code');
                 } else {
